@@ -1,0 +1,6 @@
+Set-Content -Path .gitignore -Value "__pycache__/
+*.log
+*.npy
+models/
+data/
+results/"
