@@ -1,8 +1,0 @@
-# Ignore large files
-*.keras
-*.h5
-*.npy
-*.zip
-*.tar.gz
-*.log
-__pycache__/
