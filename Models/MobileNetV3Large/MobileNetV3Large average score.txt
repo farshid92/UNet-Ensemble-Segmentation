@@ -1,0 +1,6 @@
+Accuracy: 0.905
+F1: 0.82529
+Jaccard: 0.73907
+Recall: 0.83702
+Precision: 0.88442
+Thresholded Jaccard: 0.6543
