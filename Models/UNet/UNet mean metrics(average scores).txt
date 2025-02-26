@@ -1,0 +1,6 @@
+Accuracy: 0.8962
+F1: 0.81109
+Jaccard: 0.7166
+Recall: 0.86806
+Precision: 0.82989
+Meets Threshold (>= 0.65): 0.6112
