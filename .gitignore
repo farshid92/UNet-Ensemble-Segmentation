@@ -1,15 +1,20 @@
-# Data and large artifacts
+# Datasets and trained weights - too large for Git
 data/
-results/
 trained_models/
 *.h5
 *.keras
 *.log
 *.xml
 
+# Generated at runtime
+results/soft_predictions/
+results/predictions/
+results_average_ensemble/
+files/
+
 # Saved arrays, except the published GA results
 *.npy
-!Models/GA_ensembling/artifacts/*.npy
+!results/ga_artifacts/*.npy
 
 # Python
 __pycache__/
