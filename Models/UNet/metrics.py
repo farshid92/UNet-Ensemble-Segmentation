@@ -6,7 +6,7 @@ smooth = 1e-15
 
 def iou(y_true, y_pred):
     """Calculate Intersection over Union (IoU)"""
-    """add line here"""
+    
     y_true = K.flatten(y_true)
     y_pred = K.flatten(y_pred)
     intersection = K.sum(y_true * y_pred)
@@ -16,7 +16,7 @@ def iou(y_true, y_pred):
 
 def dice_coef(y_true, y_pred):
     """Calculate Dice Coefficient"""
-    """add line here"""
+    
     y_true = K.flatten(y_true)
     y_pred = K.flatten(y_pred)
     intersection = K.sum(y_true * y_pred)

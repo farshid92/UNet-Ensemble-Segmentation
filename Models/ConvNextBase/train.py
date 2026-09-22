@@ -145,7 +145,7 @@ if __name__ == "__main__":
     log_dir = "files/logs_convnextbase"
 
     """Dataset : 60/20/20"""
-    dataset_path = "your path to ISIC_Challenge_Dataset"
+    dataset_path = os.environ.get("ISIC_DATASET_PATH", "data/ISIC_Challenge_Dataset")
     (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
 
     print(f"Train: {len(train_x)} - {len(train_y)}")

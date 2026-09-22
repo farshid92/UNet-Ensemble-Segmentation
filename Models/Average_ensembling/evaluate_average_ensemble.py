@@ -17,11 +17,11 @@ else:
 best_weights = np.load('best_weights.npy')
 
 # Load the validation data
-dataset_path = "D:/thesis/ISIC_Challenge_Dataset"
+dataset_path = os.environ.get("ISIC_DATASET_PATH", "data/ISIC_Challenge_Dataset")
 _, (valid_x, valid_y), _ = load_data(dataset_path)
 
 # Directory where the soft predictions for validation data are stored
-soft_predictions_dir = "results/seperated_soft_predictions"
+soft_predictions_dir = os.environ.get("SOFT_PREDICTIONS_DIR", "results/soft_predictions")
 
 # Metrics to calculate
 iou_scores = []

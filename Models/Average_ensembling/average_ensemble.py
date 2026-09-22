@@ -17,6 +17,8 @@ np_config.enable_numpy_behavior()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
+MODELS_DIR = os.environ.get("TRAINED_MODELS_DIR", "trained_models")
+
 H = 256
 W = 256
 
@@ -82,14 +84,14 @@ if __name__ == "__main__":
     
     """load the models for average ensembling"""
     with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef, 'dice_loss': dice_loss}):
-        model_unet = tf.keras.models.load_model("D:/UNet/files/model508lr-5_rbwTrue.keras")
-        model_convnextbase = tf.keras.models.load_model("D:/ConvNextBase/files/model_convnextbase.keras")
-        model_mobilenetv3large = tf.keras.models.load_model("D:/MobileNetV3Large/files/model_mobilenetv3large.keras")
-        model_resnet50v2 = tf.keras.models.load_model("D:/ResNet50V2/files/model_resnet50v2.keras")
-        model_vgg19 = tf.keras.models.load_model("D:/VGG19/files/model_vgg19_unet.keras")
+        model_unet = tf.keras.models.load_model(os.path.join(MODELS_DIR, "UNet", "files", "model508lr-5_rbwTrue.keras"))
+        model_convnextbase = tf.keras.models.load_model(os.path.join(MODELS_DIR, "ConvNextBase", "files", "model_convnextbase.keras"))
+        model_mobilenetv3large = tf.keras.models.load_model(os.path.join(MODELS_DIR, "MobileNetV3Large", "files", "model_mobilenetv3large.keras"))
+        model_resnet50v2 = tf.keras.models.load_model(os.path.join(MODELS_DIR, "ResNet50V2", "files", "model_resnet50v2.keras"))
+        model_vgg19 = tf.keras.models.load_model(os.path.join(MODELS_DIR, "VGG19", "files", "model_vgg19_unet.keras"))
        
     """ Load the test data """
-    dataset_path = "D:/thesis/ISIC_Challenge_Dataset"
+    dataset_path = os.environ.get("ISIC_DATASET_PATH", "data/ISIC_Challenge_Dataset")
     _, _, (test_x, test_y) = load_data(dataset_path) 
     
     # Debug: print number of test samples

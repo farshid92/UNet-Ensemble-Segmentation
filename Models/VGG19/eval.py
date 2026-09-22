@@ -75,7 +75,7 @@ if __name__ == "__main__":
         model = tf.keras.models.load_model("files/model_vgg19_unet.keras")
        
     """ Load the test data """
-    dataset_path = "your path to ISIC_Challenge_Dataset"
+    dataset_path = os.environ.get("ISIC_DATASET_PATH", "data/ISIC_Challenge_Dataset")
     _, _, (test_x, test_y) = load_data(dataset_path) 
     
     # Debug: print number of test samples

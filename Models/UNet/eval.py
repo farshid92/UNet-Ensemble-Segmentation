@@ -85,7 +85,7 @@ if __name__ == "__main__":
     
        
     """ Load the test data """
-    dataset_path = "path to your ISIC_Challenge_Dataset"
+    dataset_path = os.environ.get("ISIC_DATASET_PATH", "data/ISIC_Challenge_Dataset")
     _, _, (test_x, test_y) = load_data(dataset_path) 
     
     # # Debug: print number of test samples

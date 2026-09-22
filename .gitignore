@@ -1,6 +1,18 @@
-*.xml
-*.npy
-*.h5
-*.log
+# Data and large artifacts
 data/
 results/
+trained_models/
+*.h5
+*.keras
+*.log
+*.xml
+
+# Saved arrays, except the published GA results
+*.npy
+!Models/GA_ensembling/artifacts/*.npy
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
